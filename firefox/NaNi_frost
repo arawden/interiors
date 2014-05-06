@@ -12,8 +12,7 @@ This is an edited version of the nnli firefox css that I've done. It's a specifi
 */
 *
 menubar {
-     background: none !important;
-     display: none !important;
+     display: none;
 }
  /*_ _
 | | | |
@@ -21,74 +20,80 @@ menubar {
 | __/ _` | '_ \/ __|
 | || (_| | |_) \__ \
 \__\__,_|_.__/|___/ */
-#tabbrowser-tabs {
+#navigator-toolbox{
     background-color: #fff!important;
 }
+#tabbrowser-tabs{
+    background-color: #fff;
+}
+#TabsToolbar{
+    background-color: #fff!important;
+    background-image: none;
+    margin-left: -15px;
+    margin-bottom: -10px;
+}
+.tab-background-start, .tab-background-end{
+    display: none!important;
+}
+.tab-background-middle{
+    background-image: none!important;
+}
+.tab-content{
+    background-color: #fff;
+}
 .tabbrowser-tab[fadein]:not([pinned]) {
-    border-radius: 0;
     min-width: 50px !Important;
     max-width: 200px !Important;
 }
-.tab-text.tab-label{
-text-align: center !Important;
-margin-bottom: -3px !Important;
-font-size: 9pt !Important;
-font-family: Tewi !Important;
-}
 .tabbrowser-tab{
-padding: 5px !Important;
-max-height:20px !Important;
-border:none !Important;
-background: rgb(255,255,255) !Important;
-color: #7aa7ba !Important;
-}
-.tabbrowser-tab:first-of-type{
-    padding: 5px 5px 5px 10px !important;
+    padding: 0px;
+    max-height:20px;
+    color: #7aa7ba !Important;
 }
 .tabbrowser-tab:hover{
-/*-moz-appearance: none !Important;*/
     color: #efffff!important;
-background-color: #7aa7ba !important;
-
+}
+.tabbrowser-tab:hover .tab-background-middle, .tabbrowser-tab:hover .tab-content{
+    background-color: #7aa7ba !important;
 }
 .tabbrowser-tab[selected="true"]{
-color: #fff !Important;
-background-color: #7aa7ba !important;
+    color: #fff !Important;
+    margin-right: 8px;
+    margin-left: 10px;
 }
-.tab-throbber {
-margin-top: 1px !Important;
-width: 10px !Important;
-height: 10px !Important;
+.tabbrowser-tab[selected="true"] .tab-background-middle, .tabbrowser-tab[selected="true"] .tab-content{
+    background-color: #7aa7ba !important;
+}
+.tab-text.tab-label{
+    text-align: center !Important;
+    margin-bottom: -2px !Important;
+    font-size: 9pt !Important;
+    font-family: Tewi !Important;
 }
 .tabbrowser-tab:not([pinned]) .tab-icon-image:not([src]) {
-visibility: collapse;
+    visibility: collapse;
 }
-
-#main-window #tabbrowser-tabs tab[pinned] .tab-close-button,
+#main-window #tabbrowser-tabs .tab-close-button,
 #tabbrowser-tabs toolbarbutton.scrollbutton-up,
 #tabbrowser-tabs toolbarbutton.scrollbutton-down,
-#appmenu-button, #appmenu-toolbar-button {
-display: none !important;
-}
-
-#TabsToolbar > toolbarbutton:not(#home-button):not(#tabview-button):not(#new-tab-button):not(#alltabs-button) > image {
-margin-bottom: 8px !important;
-}
-#TabsToolbar{background: none!important; background-color: rgb(51,52,51)!important;margin-left:-4px!important;}
-#tabbrowser-tabs tab[selected]:not([pinned]) {
-min-width: 200px !important;
-}
-tab .tab-icon-image:not([src]) {
-max-height:12px;
-max-width:16px;
-margin: 0 !important;
-}
-.tabbrowser-tab:not([pinned]) .tab-icon-image {
-display: none !important;
-}
-tab .tab-close-button, .tabs-newtab-button
+#appmenu-button, #appmenu-toolbar-button, #alltabs-button,
+.tabbrowser-tab .tab-icon-image,
+.tabs-newtab-button,
+.tab-throbber
 {
-    display: none;
+    display: none !important;
+}
+#tabbroswer-tabs > tab{
+    min-width: 200px!important;
+}
+#tabbrowser-tabs > tab:last-of-type .tab-background{
+    background-image: none!important;   
+}
+/* Tab separators */
+#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
+.tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
+#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
+  background-image: none !important;
 }
  /* _
 | |
@@ -96,28 +101,27 @@ _ __ __ ___ _| |__ __ _ _ __
 | '_ \ / _` \ \ / / '_ \ / _` | '__|
 | | | | (_| |\ V /| |_) | (_| | |
 |_| |_|\__,_| \_/ |_.__/ \__,_|_| */
-#navigator-toolbox{ -moz-appearance: none!important;}
 #nav-bar { 
+    -moz-appearance: none!important;
     background-color: #fff!important;
-max-height: 20px !Important; min-height: 20px !Important;
-margin: -1px 0 !Important;
-padding-left: 0px !Important; padding-right: 0px !Important;
+    max-height: 20px !Important; min-height: 20px !Important;
+    margin: -1px 0 !Important;
+    padding-left: 0px !Important; padding-right: 0px !Important;
     border: none!important;
 }
 #urlbar-container,#urlbar {
-    -moz-appearance: none!important;
     background-color: #fff!important;
     box-shadow: none!important;
-margin: 0!important;
-min-height:20px!Important;
-max-height:24px !Important;
-border:none!important;
+    margin: 0!important;
+    min-height:20px!Important;
+    max-height:24px !Important;
+    border:none!important;
 }
 #urlbar {
-color: #2f414d !important;
+    color: #2f414d !important;
     font-family: Tewi!important;
-font-size: 10pt !Important;
-padding: 3px 0 0 2px !Important;
+    font-size: 10pt !Important;
+    padding: 3px 0 0 2px !Important;
     border: none!important;
 }
 
@@ -133,8 +137,12 @@ font-size: 13px !Important;
 #urlbar-icons > image,
 #urlbar-container dropmarker,
 #appmenu-button .button-text,
-#appmenu-button .button-menu-dropmarker{
-display:none!Important;
+#appmenu-button .button-menu-dropmarker,
+#back-button, #forward-button,
+#urlbar-go-button, #urlbar-reload-button, #urlbar-stop-button,
+#PanelUI-button,
+#developer-button{
+    display:none!Important;
 }
 /* _ _ _
 | | | | ____ | |
@@ -144,10 +152,6 @@ display:none!Important;
 \__\__,_|_.__/|___/\ \__,_|\__\___/| .__/
 \____/ | |
 |_|*/
-#main-window[chromemargin^="0,"][sizemode="normal"]:not([inFullscreen="true"])[tabsontop="true"] #navigator-toolbox:not([customizing="true"]){
-  margin-top:-22px !Important;
-  margin-right:90px!important;
-}
 window:not([inFullscreen])[sizemode="normal"] #navigator-toolbox[tabsontop="true"] #TabsToolbar {
     padding-left: 0px !Important;
     /*padding-right: 20px !Important; Take this away to get rid of weird box*/
@@ -169,26 +173,22 @@ window:not([inFullscreen]) #navigator-toolbox[tabsontop="true"]
     color: black !Important;
 }
 /** Bookmarks **/
-
 .bookmark-item .toolbarbutton-icon{display:none!important;}
 #personal-bookmarks { 
-    margin-top: -1px!important;
+    margin: -1px 0;
     background-color: #fff; 
     -moz-appearance: none!important;
 }
 #personal-bookmarks .bookmark-item
 {
-    background-color: #fff;
-    padding: 0 0px !important;
-    margin: 0!important;
+    margin: 0 1px;
     font-family: Tewi!important;
     font-size: 9pt!important;
 }
 #personal-bookmarks .bookmark-item:hover{
--moz-appearance: none!important;
-color: rgb(120,120,120)!important;
-    margin: 0px!important;
-    padding: 5px!important;
+    -moz-appearance: none!important;
+    color: rgb(120,120,120)!important;
+    margin: 0 3px;
 }
 /** URL Dropdown Text**/
 .popup-internal-box, .autocomplete-richlistbox{
