@@ -30,9 +30,7 @@ hsetroot -solid "#2E3436" &
 ## 4. tint2 panel
 (\
 xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 &&\
-sleep 1s && \
 feh --bg-fill --no-xinerama /home/nani/downloads/images/background.jpg && \
-sleep 1s && \
 tint2 \
 ) &
 
@@ -45,7 +43,6 @@ if egrep -iq 'touchpad' /proc/bus/input/devices; then
     synclient TapButton1=1 &
 fi
 
-
 ## Set keyboard settings - 250 ms delay and 25 cps (characters per second) repeat rate.
 ## Adjust the values according to your preferances.
 xset r rate 250 25 &
@@ -54,7 +51,11 @@ xset r rate 250 25 &
 xset b off &
 
 ## Turn on battery
-xfce4-power-manager
+xfce4-power-manager &
 
+##Turn on clipboard manager
+clipit -n &
+## Turn on volume manager
+pnmixer & 
 ## Turn on mpd
 mpd

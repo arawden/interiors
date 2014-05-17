@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openbox_menu xmlns="http://openbox.org/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://openbox.org/                 file:///usr/share/openbox/menu.xsd">
+	<menu id="root-menu" label="Openbox 3">
+		<item label="ffox">
+			<action name="Execute">
+				<command>firefox</command>
+			</action>
+		</item>
+		<item label="ranger">
+			<action name="Execute">
+				<command>urxvt -e ranger</command>
+			</action>
+		</item>
+		<item label="cmd">
+			<action name="Execute">
+				<command>urxvt</command>
+			</action>
+		</item>
+		<item label="txt">
+			<action name="Execute">
+				<command>st3</command>
+			</action>
+		</item>
+		<item label="ncmpcpp">
+			<action name="Execute">
+				<command>urxvt -e ncmpcpp</command>
+			</action>
+		</item>
+		<item label="skype">
+			<action name="Execute">
+				<command>skype</command>
+			</action>
+		</item>
+		<separator/>
+		<item label="run">
+			<action name="Execute">
+				<command>gmrun</command>
+			</action>
+		</item>
+		<separator/>
+		<menu id="settings" label="settings">
+			<item label="ui">
+				<action name="Execute">
+					<command>lxappearance</command>
+				</action>
+			</item>
+			<item label="power">
+				<action name="Execute">
+					<command>xfce4-power-manager-settings</command>
+				</action>
+			</item>
+		</menu>
+		<menu id="system" label="system">
+			<item label="synaptic">
+				<action name="Execute">
+					<command>gksudo synaptic</command>
+				</action>
+			</item>
+			<item label="slim">
+				<action name="Execute">
+					<command>gksudo slimconf</command>
+				</action>
+			</item>
+		</menu>
+		<!--<menu id="help" label="Help" execute="cb-help-pipemenu" />-->
+		<separator/>
+		<item label="lock">
+			<action name="Execute">
+				<command>slimlock</command>
+			</action>
+		</item>
+		<item label="flee">
+			<action name="Execute">
+				<command>cb-exit</command>
+			</action>
+		</item>
+	</menu>
+</openbox_menu>
