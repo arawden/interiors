@@ -55,7 +55,11 @@ menubar {
 }
 .tabbrowser-tab[selected="true"]{
     color: rgb(215,215,215) !important;
-    margin-right: 5px;
+    margin-right: 12px;
+    margin-left: 8px;
+}
+.tabbrowser-tab[selected="true"] .tab-background-middle, .tabbrowser-tab[selected="true"] .tab-content{
+    background-color: rgb(34,34,34);
 }
 .tab-text.tab-label{
     text-align: center;
@@ -63,7 +67,7 @@ menubar {
     font-size: 11pt;
     font-family: ProggyTinyTTSZ;
 }
-.tabbrowser-tab:not([pinned]) .tab-icon-image:not([src]) {
+.tab-icon-image{
     visibility: collapse;
 }
 #main-window #tabbrowser-tabs .tab-close-button,
@@ -78,13 +82,10 @@ menubar {
 #tabbrowser-tabs tab[selected]:not([pinned]) {
     min-width: 200px !important;
 }
-#tabbrowser-tabs > tab:last-of-type .tab-background{
-    background-image: none!important;
-}
 /* Tab separators */
-#tabbrowser-tabs[movingtab] > .tabbrowser-tab[beforeselected]:not([last-visible-tab])::after,
-.tabbrowser-tab:not([selected]):not([afterselected-visible]):not([afterhovered]):not([first-visible-tab]):not(:hover)::before,
-#tabbrowser-tabs:not([overflow]) > .tabbrowser-tab[last-visible-tab]:not([selected]):not([beforehovered]):not(:hover)::after {
+.tabbrowser-tab::after,
+.tabbrowser-tab::before
+{
   background-image: none !important;
 }
  /* _
@@ -144,7 +145,7 @@ _ __ __ ___ _| |__ __ _ _ __
 |_|*/
 window:not([inFullscreen])[sizemode="normal"] #TabsToolbar {
     padding-left: 0px !Important;
-    margin-top: 5px !important;
+    margin-top: 2px !important;
 }
 window:not([inFullscreen])[sizemode="maximized"] #navigator-toolbox[tabsontop="true"] #TabsToolbar {
     margin-top:-4px !important;
