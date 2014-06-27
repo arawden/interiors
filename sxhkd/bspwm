@@ -1,0 +1,101 @@
+#
+# bspwm hotkeys
+#
+
+super + shift + Escape
+  bspc quit
+
+super + shift + r
+  sh ~/.config/bspwm/bspwmrc
+
+alt + F4
+  bspc window -c
+
+super + shift + {f,p,s}
+  bspc window -t {floating,pseudo_tiled,fullscreen}
+}
+
+alt + Tab
+  bspc window -f last
+
+super + b
+  bspc desktop -B
+
+
+super + {grave,Tab}
+  bspc {window,desktop} -f last
+
+super + apostrophe
+  bspc window -s last
+
+super + {o,i}
+  bspc control --record-history off; \
+  bspc window {older,newer} -f; \
+  bspc control --record-history on
+
+super + y
+  bspc window -w last.manual
+
+super + m
+  bspc window -s biggest
+
+super + shift + {h,j,k,l}
+  bspc window -s {left,down,up,right}
+
+super + {_,shift + }c
+  bspc window -f {next,prev}
+
+super + {comma,period}
+  bspc desktop -C {backward,forward}
+
+super + bracket{left,right}
+  bspc desktop -f {prev,next}
+
+super + ctrl + {h,j,k,l}
+  bspc window -p {left,down,up,right}
+
+super + ctrl + {_,shift + }space
+  bspc {window -p cancel,desktop -c}
+
+super + alt + {h,j,k,l}
+  bspc window -e {left -10,down +10,up -10,right +10}
+
+super + alt + shift + {h,j,k,l}
+  bspc window -e {right -10,up +10,down -10,left +10}
+
+super + ctrl + {1-9}
+  bspc window -r 0.{1-9}
+
+super + {_,shift + }{1-9,0}
+  bspc {desktop -f,window -d} ^{1-9,10}
+
+~button1
+  bspc pointer -g focus
+
+super + button{1-3}
+  bspc pointer -g {move,resize_corner,resize_side}
+
+super + !button{1-3}
+  bspc pointer -t %i %i
+
+super + @button{1-3}
+  bspc pointer -u
+#
+# Non-WM keys
+#
+XF86Audio{Raise,Lower}Volume
+    amixer set Master {5%+,5%-} unmute
+XF86Audio{Play,Pause}
+    mpc {play,pause}
+Pause
+    mpc pause
+Print
+    scrot
+super + t
+    urxvt
+super + w
+    firefox
+super + l
+    slimlock
+super + r
+    urxvt -geometry 80x1 -name 'run' -e sh -c '/bin/bash -t -t'

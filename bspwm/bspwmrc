@@ -1,0 +1,27 @@
+#!/bin/sh
+
+bspc monitor -d dev web mus mov img
+
+bspc config border_width 5
+bspc config window_gap 10
+bspc config split_ratio 0.5
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+
+bspc config top_padding 20px
+bspc config presel_border_color "#ffffff"
+bspc config normal_border_color "#ccccc6"
+bspc config focused_border_color "#ffffff"
+bspc config focus_follows_pointer true
+
+bspc rule -a Gimp desktop=^3 follow=on floating=on
+bspc rule -a pavucontrol floating=on focus=on
+bspc rule -a feh floating=on
+bspc rule -a run floating=on
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+bar=~/.config/bar/bspwm.sh
+if [ -x "$bar" ] ; then
+	"$bar" &
+fi

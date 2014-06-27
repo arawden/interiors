@@ -1,0 +1,85 @@
+/*
+                 _ _  __      ____ _ 
+  _ _  __ _ _ _ (_) |/  \__ _|__  (_)
+ | ' \/ _` | ' \| |_| () \ \ / / /| |
+ |_||_\__,_|_||_|_(_)\__//_\_\/_/_/ |
+                                |__/ 
+
+*/
+@font-face{
+	font-family: 'Anon';
+	src: url('Anon.eot'), /* IE9 Compat Modes */
+		 url('Anon.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+	     url('Anon.woff') format('woff'), /* Modern Browsers */
+	     url('Anon.ttf')  format('truetype'), /* Safari, Android, iOS */
+	     url('Anon.svg#svg') format('svg'); /* Legacy iOS */
+	font-weight: normal;
+	font-style: normal;
+}
+*{
+	-moz-box-sizing: border-box;
+}
+body{
+	background-image: url("bg.jpg");
+	background:0% 0% center cover fixed;
+}
+.container{
+		text-align: center;
+		width: 100%;
+		height: 100%;
+		position: fixed;
+}
+.container:before{
+	  content: '';
+	  display: inline-block;
+	  height: 100%;
+	  vertical-align: middle;
+	  margin-right: -0.25em; 
+}
+.wrapper{
+	display: inline-block;
+	vertical-align: middle;
+	background-color: rgba(31,31,34,.75);
+	border: solid 5px rgba(170,170,170,.25);
+	color: rgb(170,170,170);
+	font-family: "Anon", monospace;
+	font-size: 16px;
+	
+	.name{
+		font-size: 4rem;
+		margin: 0 auto;
+		width: 100%;	
+	}
+	ul{
+		float: left;
+		list-style: none;
+		padding: 32px;
+
+		a{
+			color: rgb(170,170,170);
+			text-decoration: none;
+
+			&:hover{
+				color: rgb(255,255,255);
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 600px){
+	.container{
+		position: relative;
+	}
+	.wrapper{
+		width: 70%;
+		.name{
+			font-size: 2rem;
+		}
+		ul{
+			float: none;
+			clear:both;
+			margin: 0 auto;
+			padding: 16px;
+		}
+	}	
+}

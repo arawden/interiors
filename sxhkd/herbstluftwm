@@ -1,0 +1,26 @@
+#
+# Herbstluftwm binds
+#
+
+super + shift + q
+  herbstclient quit
+
+super + shift + r
+  herbstclient reload
+
+alt + F4
+  herbstclient close
+
+#
+# Non-WM keys
+#
+XF86Audio{Raise,Lower}Volume
+  amixer set Master {5%+,5%-} unmute
+super + t
+  urxvt
+super + w
+  firefox
+super + l
+  slimlock
+super + r
+  urxvt -geometry 80x1 -name 'run' -e sh -c '/bin/bash -t -t'
