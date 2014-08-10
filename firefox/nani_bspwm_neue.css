@@ -22,8 +22,8 @@ v 0.1 for Arch
     display: none;
 }
 #tabbrowser-tabs{ /* Tab container*/
-    background-color: #bebeb4;
-    color: #fff;
+    background-color: #ffffff;
+    color: #000;
     margin-left:-10px; /* Flush with the side of the window */
     margin-right: -15px; /* You need like 5-7 tabs open for this to come into effect */
     margin-bottom: -10px; /* Since we shrink the tab size, we have to shrink the container to match */
@@ -53,14 +53,14 @@ v 0.1 for Arch
 }
 /* Tab hovering */
 .tabbrowser-tab:hover .tab-background-middle{
-    background-color: #ffffff;
+    background-color: #000000;
 }
 /* Selected tab */
 .tabbrowser-tab[selected="true"] .tab-background-middle, .tabbrowser-tab[selected="true"] .tab-content{ 
-    background-color: #ffffff;
+    background-color: #000000;
 }
 .tabbrowser-tab:hover .tab-label, .tabbrowser-tab[selected="true"] .tab-label{
-    color: #bebeb4;
+    color: #ffffff;
 }
 
 /* Clean up miscellaneous shit that can't be done in customize */
@@ -102,8 +102,8 @@ v 0.1 for Arch
     max-height: 20px;
 }
 #urlbar{
-    background-color: #bebeb4;
-    color: #fff;
+    background-color: #fff;
+    color: #000;
     font-family: Tewi;
     font-size: 11px;
     
@@ -116,12 +116,12 @@ v 0.1 for Arch
 /* Selected text inside the URL bar */
 #urlbar *|*::-moz-selection {
     background: #000;
-    color: #eee;
+    color: #fff;
 }
 
 /* Dropdown of suggested URL */
 .popup-internal-box, .autocomplete-richlistbox{
-    background-color: #bebeb4!important;
+    background-color: #fff!important;
     border: none!important;
     margin: -4px 0 -5px 0!important;
     padding: 0!important;
@@ -132,16 +132,17 @@ v 0.1 for Arch
 /* Selected from dropdown */
 .autocomplete-richlistitem[selected="true"], .autocomplete-richlistiem:hover{
     background-color: #fff!important;
-    color: #bebeb4!important;  
+    color: #333!important; 
+    text-decoration: underline;
 }
 /* Get rid of the little gray emphasis thing matching the URL snippet you typed*/
 .autocomplete-richlistitem:hover *|*.ac-emphasize-text, .autocomplete-richlistitem[selected="true"] *|*.ac-emphasize-text{
-  background: none;
+	background: none;
     box-shadow: none;
 }
 /* If you have tab already or something */
 .ac-action-text{
-    color: #fff;
+    color: #000;
 }
 
 #back-button,
@@ -172,18 +173,18 @@ v 0.1 for Arch
 }
 /* Huge wrapper*/
 #PersonalToolbar{
-    background-color: #bebeb4!important;
+    background-color: #fff!important;
     margin-top: -5px!important;
 }
 /* Boookmarks wrapper*/
 #personal-bookmarks { 
     margin: 0;
-    background-color: #bebeb4; 
+    background-color: #fff; 
 }
 /* Actual bookmarks */
 .bookmark-item{
     -moz-appearance: none;
-    color: #fff;
+    color: #000;
     margin: 0 2px;
     font-family: Tewi;
     font-size: 11px;
@@ -194,8 +195,7 @@ I don't know how to style those. I thought it was selected=true but apparently n
 Update: _moz-menuactive = true
 */
 .bookmark-item:hover, .bookmark-item[_moz-menuactive="true"]{
-
-    color: rgb(234,234,234);
+    color: #bbbbbb;
 }
 /* Bookmark menus */
 .menu-iconic-icon{ /* Who needs favicons */
@@ -213,4 +213,3 @@ I don't know how to style those. I thought it was selected=true but apparently n
 #navigator-toolbox::after{
     display: none;
 }
-
