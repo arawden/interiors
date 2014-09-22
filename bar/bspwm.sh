@@ -1,6 +1,6 @@
 #!/bin/bash
-BG=#bebeb4
-FG=#ffffff
+BG=#ffffff
+FG=#000000
 
 {
 desktop(){
@@ -25,7 +25,7 @@ paus(){
   echo -n $(mpc | if grep -q "paused"; then echo -n "▮▮"; else echo -n "♫"; fi)
 }
 while :; do
-  printf "%s\n" "%{R} $(desktop) %{R}%{r}%{R} $(paus) %{R} $(mus) %{R} $(vol)%% %{R} $(battery)%% %{R} $(dat) %{R}"
+  printf "%s\n" "%{R} $(desktop) %{R}%{r}%{R} $(paus) %{R} $(mus) %{R}%{A:exec pavucontrol:} $(vol)%% %{A}%{R} $(battery)%% %{R} $(dat) %{R}"
 sleep 1
 done
-} 2> /dev/null | bar -p -g 1920x18 -B "#bebeb4" -F "#ffffff" -f "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*" &
+} 2> /dev/null | bar -p -g 1920x18 -B "#ffffff" -F "#000000" -f "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*" | sh ~/.config/bar/spawn.sh &
