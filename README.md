@@ -3,4 +3,4 @@ dotfiles
 
 I configure things
 
-[Scrot](scrot.png)
+![Scrot](scrot.png)
