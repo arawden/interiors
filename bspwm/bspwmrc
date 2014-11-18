@@ -19,7 +19,7 @@ bspc rule -a pavucontrol floating=on focus=on
 bspc rule -a feh floating=on
 bspc rule -a run floating=on
 
-sh ~/.config/bar/bspwm.sh &
+~/.config/bar/bspwm.sh | ~/.config/bar/spawn.sh &
 xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 &
 feh --bg-fill --no-xinerama ~/downloads/images/arch_bg.png &
 pkill xflux &

@@ -11,10 +11,10 @@ Xft.lcdfilter: lcddefault
 ! Colors - dotshare.it/dots/16/ ----------------------------------------------
 
 ! *foreground:#a0a0a0
- *foreground:#333333
+ *foreground:#000000
 ! *background:#1b1d1e
 ! *background:#ccccc6
-*background:#bebeb4
+*background:#ffffff
 
 *color0:           #3d3e3d
 *color8:           #5a5b5c

@@ -1,4 +1,4 @@
-# Encoding: UTF-8
+
 # Released under MIT
 
 SCRIPT_NAME = "mpc".freeze
@@ -38,13 +38,13 @@ def music_command(data,buffer,args)
             `mpc prev`
             Weechat.print('', "Music: Previous song")
         when 'shades'
-            puts Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} ヾ(⌐■_■)ノ")
+            Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} ヾ(⌐■_■)ノ")
         when 'flower'
-            puts Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} (✿◠‿◠)")
+            Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} (✿◠‿◠)")
         when 'sad'
-            puts Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} (▰˘︹˘▰)")
+            Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data} (◡︿◡✿)")
         else
-            puts Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data}")
+            Weechat.command(Weechat.current_buffer, "/me is listening to: #{mpc_data}")
         end
     end
 end

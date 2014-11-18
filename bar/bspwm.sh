@@ -28,4 +28,4 @@ while :; do
   printf "%s\n" "%{R} $(desktop) %{R}%{r}%{R} $(paus) %{R} $(mus) %{R}%{A:exec pavucontrol:} $(vol)%% %{A}%{R} $(battery)%% %{R} $(dat) %{R}"
 sleep 1
 done
-} 2> /dev/null | bar -p -g 1920x18 -B "#ffffff" -F "#000000" -f "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*" | sh ~/.config/bar/spawn.sh &
+} 2> /dev/null | bar -p -g 1920x18 -B "#ffffff" -F "#000000" -f "-*-tewi-medium-*-*-*-11-*-*-*-*-*-*-*" | sh ~/.config/bar/spawn.sh

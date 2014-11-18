@@ -29,8 +29,7 @@ v 0.1 for Arch
     margin-bottom: -10px; /* Since we shrink the tab size, we have to shrink the container to match */
 }
 .tabbrowser-tab{ /* Actual tabs */
-    max-height: 20px;
-    
+    max-height: 18px;
     margin: 0 10px;
     padding: 0;
 }
@@ -91,6 +90,10 @@ v 0.1 for Arch
 /////////////////////////
 */
 
+#TabsToolbar:not([collapsed="true"]) + #nav-bar{
+    border: none!important;
+}
+
 #nav-bar { 
     -moz-appearance: none!important;
     margin: 0 -1px; /* Theres these two white pixels for some reason */
@@ -110,7 +113,7 @@ v 0.1 for Arch
     border: none;
     margin: 0!important;
     padding: 5px 0; /* make the URL bar take the full space of the container. */
-    padding-left: 3px; /* its hard to read if the text is flush */
+    padding-left: 8px; /* its hard to read if the text is flush */
 }
 
 /* Selected text inside the URL bar */

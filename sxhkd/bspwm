@@ -85,8 +85,10 @@ super + @button{1-3}
 #
 XF86Audio{Raise,Lower}Volume
     amixer set Master {5%+,5%-} unmute
-XF86Audio{Play,Pause}
-    mpc {play,pause}
+XF86Audio{Play,Pause,Prev,Next}
+    mpc {play,pause,prev,next}
+XF86MonBrightness{Up,Down}
+    light -{A,U} 5
 Pause
     mpc pause
 Print
