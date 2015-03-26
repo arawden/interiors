@@ -11,14 +11,14 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
   unset f
 fi
 
-xrandr --output LVDS1 --auto --primary --output VGA1 --auto --right-of LVDS1 & 
 xsetroot -cursor_name left_ptr &
-#feh --bg-fill --no-xinerama ~/downloads/images/arch_bg.png &
+xset s off # disable screen blanking
+xset -dpms # turn off display power management
 clipit &
 sxhkd -c ~/.config/sxhkd/bspwm &
 mpd &
 pulseaudio &
-xrdb ~/.Xresources-bspwm &
+xrdb -load ~/.Xresources &
 
 # exec gnome-session
 # exec startkde

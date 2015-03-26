@@ -1,0 +1,19 @@
+@-moz-document domain("tumblr.com") {
+  .is_recommended{
+    display: none;
+  }
+}
+@-moz-document domain("facebook.com") {
+  #pagelet_games_rhc{
+    display:none;
+  }
+  #pagelet_trending_tags_and_topics{
+    display: none;
+  }
+}
+
+@-moz-document domain("youtube.com") {
+  #watch-discussion{
+    display:none;
+  }
+}
