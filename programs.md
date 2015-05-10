@@ -1,0 +1,19 @@
+vim
+firefox
+skype
+sublime text 3
+mpv
+bspwm
+bar
+feh
+tmux
+weechat
+ncmpcpp
+mpd
+ranger
+sxhkd
+pacaur
+cower
+rtorrent
+mpc
+stalonetray
