@@ -1,7 +1,7 @@
 dotfiles
 ========
 
-I configure things
+I configure things  
 Fira:
 ![Scrot](fira.png)
 Bauhaus:
