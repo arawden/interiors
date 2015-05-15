@@ -1,3 +1,16 @@
+! font settings --------------------------------------------------------------
+Xft.autohint: true
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=11
+URxvt.boldFont: xft:DejaVu Sans Mono Bold for Powerline:size=11
+URxvt.scrollBar: false
+! -------
+! Colors
 ! special
 *.foreground:   #2c2c2c
 *.background:   #fcfcfc

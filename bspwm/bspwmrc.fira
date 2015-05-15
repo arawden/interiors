@@ -1,0 +1,34 @@
+#!/bin/sh
+
+bspc monitor LVDS1 -d dev web mus mov img
+bspc monitor VGA1 -d dev2 web2 mus2 mov2 img2
+bspc monitor HDMI1 -d dev2 web2 mus2 mov2 img2
+bspc config border_width 5
+bspc config window_gap 10
+bspc config split_ratio 0.5
+bspc config borderless_monocle false
+bspc config gapless_monocle false
+
+bspc config top_padding 18px
+bspc config presel_border_color "#2c102a"
+bspc config normal_border_color "#2c102a"
+bspc config focused_border_color "#c8273c"
+bspc config focus_follows_pointer true
+
+bspc rule -a pavucontrol floating=on focus=on
+bspc rule -a feh floating=on
+bspc rule -a run floating=on
+
+sxhkd -c ~/.config/sxhkd/bspwm &
+~/.config/bar/bspwm.sh | ~/.config/bar/spawn.sh &
+xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 --output HDMI1 --auto --right-of LVDS1&
+HDMI="$(xrandr -q | grep "HDMI1 disconnected")"
+VGA="$(xrandr -q | grep "VGA1 disconnected")"
+if [ -z $HDMI ] || [ -z $VGA ]
+then
+  feh --bg-fill --no-xinerama ~/.fire_ultrawide.png &
+else
+  feh --bg-fill --no-xinerama ~/.fire.png &
+fi
+pkill xflux &
+xflux -l 49

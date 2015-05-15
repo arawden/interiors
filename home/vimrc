@@ -1,5 +1,6 @@
 set number
 syntax on
+filetype plugin indent on
 
 set expandtab
 set shiftwidth=2
@@ -19,7 +20,7 @@ filetype plugin indent on
 
 " Airline config
 let g:airline_powerline_fonts = 1
-let g:airline_theme='wombat'
+let g:airline_theme = "ubaryd"
 let g:airline#extensions#tabline#enabled = 1
 
 " Open NERDTree if no files specified

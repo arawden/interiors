@@ -2,5 +2,7 @@ dotfiles
 ========
 
 I configure things
-
-![Scrot](scrot.png)
+Fira:
+![Scrot](fira.png)
+Bauhaus:
+![Scrot](bauhaus.png)
