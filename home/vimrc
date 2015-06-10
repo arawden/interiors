@@ -2,11 +2,18 @@ set number
 syntax on
 filetype plugin indent on
 
+set backspace=2 " Normal backspace
 set expandtab
 set shiftwidth=2
 set softtabstop=2
 set smartindent
 set laststatus=2
+
+set listchars=tab:>>,trail:•
+set list
+
+" Enable mouse
+set mouse=a
 
 " Change autocomplete to cycle with presses of Ctrl + n
 set completeopt-=menu
@@ -19,6 +26,7 @@ execute pathogen#infect()
 filetype plugin indent on
 
 " Airline config
+set timeoutlen=100 " Change timeout to fix airline not updating on escape
 let g:airline_powerline_fonts = 1
 let g:airline_theme = "ubaryd"
 let g:airline#extensions#tabline#enabled = 1
@@ -32,3 +40,13 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 " Turn off GitGutter by default
 let g:gitgutter_enabled = 0
+
+" Syntastic checker customization
+let g:syntastic_html_checkers = ['jshint', 'tidy']
+let g:syntastic_html_tidy_exec = 'tidy5'
+
+" Copy to system clipboard
+set clipboard=unnamed
+
+" Disable folding in Markdown
+let g:vim_markdown_folding_disabled=1

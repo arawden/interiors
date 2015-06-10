@@ -402,13 +402,13 @@ a.backlink {
 }
     
 .hide-post-button{
-        display: none !important;
-    }
+  display: none !important;
+}
     
 /* Start a New Thread */
-    #togglePostFormLink{
-        display: none !important;
-    }
+#togglePostFormLink{
+    display: none !important;
+}
     
 #navlinks a:hover{
     color:#91b6c6!important;
