@@ -7,7 +7,7 @@ function smart_wd(){
 }
 function ssh_status(){
   if [[ -n "$SSH_CLIENT" ]] || [ -n "$SSH_TTY" ]; then
-    echo "%{$fg[red]%}(ssh)"
+    echo "%{$fg[red]%}ssh:"
   fi
 }
 
