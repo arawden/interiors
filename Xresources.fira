@@ -6,9 +6,10 @@ Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.lcdfilter: lcddefault
 
-URxvt.font: xft:DejaVu Sans Mono for Powerline:size=11
-URxvt.boldFont: xft:DejaVu Sans Mono Bold for Powerline:size=11
+URxvt.font: xft:Anonymice Powerline:size=10
+URxvt.boldFont: xft:Anonymice Powerline:size=10
 URxvt.scrollBar: false
+URxvt.letterSpace: -1
 ! -------
 ! Colors
 ! special

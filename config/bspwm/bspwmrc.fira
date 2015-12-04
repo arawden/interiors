@@ -20,8 +20,11 @@ bspc rule -a feh floating=on
 bspc rule -a run floating=on
 
 sxhkd -c ~/.config/sxhkd/bspwm &
-~/.config/bar/bspwm.sh | ~/.config/bar/spawn.sh &
-xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 --output HDMI1 --auto --right-of LVDS1&
+
+killall lemonbar &
+~/.config/bar/bspwm.sh &
+
+xrandr --output LVDS1 --auto --output VGA1 --auto --right-of LVDS1 --output HDMI1 --auto --right-of LVDS1 &
 HDMI="$(xrandr -q | grep "HDMI1 disconnected")"
 VGA="$(xrandr -q | grep "VGA1 disconnected")"
 if [ -z $HDMI ] || [ -z $VGA ]
@@ -31,4 +34,4 @@ else
   feh --bg-fill --no-xinerama ~/.fire.png &
 fi
 pkill xflux &
-xflux -l 49
+xflux -l 49 &

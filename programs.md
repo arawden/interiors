@@ -1,10 +1,7 @@
 vim
 firefox
-skype
-sublime text 3
 mpv
 bspwm
-bar
 feh
 tmux
 weechat
@@ -13,7 +10,5 @@ mpd
 ranger
 sxhkd
 pacaur
-cower
 rtorrent
 mpc
-stalonetray
