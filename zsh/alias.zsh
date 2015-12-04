@@ -14,3 +14,10 @@ alias irc="weechat"
 alias tmuxh="tmux new-session -c ~/"
 alias slack="scudcloud"
 alias pyserver="python -m http.server 8000 &>/dev/null"
+alias vscode="visual-studio-code"
+alias flux="xflux -l 49 &"
+
+oxo () {
+  curl -F'file=@$1' https://0x0.st
+}
+
