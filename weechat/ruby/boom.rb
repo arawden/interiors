@@ -4,7 +4,7 @@
 SCRIPT_NAME = "boom".freeze
 SCRIPT_AUTHOR = "arawde@mail.com".freeze
 SCRIPT_VERSION = "1a".freeze
-SCRIPT_LICENSE = "MIT".freeze
+SCRIPT_LICENSE = "GPL3".freeze
 DESCRIPTION = "Interact with boom from IRC".freeze
 
 COMMAND_NAME = "boom"
@@ -20,12 +20,17 @@ end
 
 
 def boom_command(data,buffer,args)
-  begin
-    boom_data = `boom echo #{args}`
-  end
-  if boom_data.include? "not found"
-    Weechat.command(Weechat.print("","Not found"))
-  else
-    Weechat.command(Weechat.current_buffer,boom_data)
-  end
+   if args.empty?
+     boom_data = `boom all`
+     Weechat.print('', boom_data)
+   elsif !args.include? " "
+     boom_data = `boom echo #{args}`
+     if boom_data.include? "not found"
+       Weechat.print('', "Not found")
+     else
+       Weechat.command(Weechat.current_buffer,boom_data)
+     end
+   else
+      Weechat.print('',"We can't enable full functionality of boom :(")
+   end
 end
