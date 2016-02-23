@@ -1,5 +1,4 @@
 vim
-firefox
 mpv
 bspwm
 feh
@@ -10,5 +9,6 @@ mpd
 ranger
 sxhkd
 pacaur
-rtorrent
 mpc
+chrome
+termite

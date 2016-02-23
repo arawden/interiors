@@ -7,3 +7,6 @@
 [submodule "vim/bundle/vim-filebeagle"]
 	path = vim/bundle/vim-filebeagle
 	url = https://github.com/jeetsukumaran/vim-filebeagle.git
+[submodule "vim/bundle/nerdtree"]
+	path = vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
