@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>AVR</title>
+    <link rel="stylesheet" href="./avr.css">
+    <script src="./react.min.js"></script>
+    <script src="./react-dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-core/5.8.23/browser.min.js"></script>
+  </head>
+  <body>
+    <h1>AVR</h1>
+    <div id="content"></div>
+    <script type="text/babel">
+      /*"social":[
+        "fb":"https://facebook.com",
+        "nstgrm":"https://instagram.com"
+        "tmblr":"https://tumblr.com",
+        "twttr":"https://twitter.com"
+      ]*/
+    var List = React.createClass({
+
+      getInitialState: function getInitialState(){
+        return {
+          news: [
+          {value: "blmbrg", href: "https://bloomberg.com"},
+          {value: "hn", href: "https://news.ycombinator.com"},
+          {value: "fdly", href: "https://feedly.com"}
+        ],
+        title: "News",
+        social: [
+          {value: "fb", href: "https://facebook.com"},
+          {value: "tmblr", href: "https://tumblr.com"},
+          {value: "twttr", href: "https://twitter.com"},
+          ],
+        title: "Social",
+        chan: [
+          {value: "/fa/", href: "https://4chan.org/fa/"},
+          {value: "/g/", href: "https://4chan.org/g/"},
+          {value: "/mu/", href: "https://4chan.org/mu/"},
+          {value: "/sp/", href: "https://4chan.org/sp/"},
+        ],
+        title: "4chan",
+        reddit: [
+          {value: "dota2", href: "https://reddit.com/r/dota2"},
+          {value: "hhh", href: "https://reddit.com/r/hiphopheads"},
+          {value: "nba", href: "https://reddit.com/r/nba"},
+          {value: "soccer", href: "https://reddit.com/r/soccer"},
+          {value: "unixporn", href: "https://reddit.com/r/unixporn"},
+        ],
+        title: "Reddit",
+        }
+      },
+
+      loadList: function loadList(array){
+        var loaded = [];
+        for(var i =0; i<array.length; i++){
+          var current = array[i];
+
+          loaded.push(<li key={i}>
+            <a href={current.href}>
+            {current.value}</a>
+          </li>);
+        }
+        return loaded;
+      },
+      render: function(){
+        var newsList = this.loadList(this.state.news);
+        var socList = this.loadList(this.state.social);
+        var chanList = this.loadList(this.state.chan);
+        var redList = this.loadList(this.state.reddit)
+        return (
+          <div>
+            <div>
+              <ListTitle title="News" />
+              <ul>{newsList}</ul>
+            </div>
+            <div>
+              <ListTitle title="Social" />
+              <ul>{socList}</ul>
+            </div>
+            <div>
+              <ListTitle title="4chan" />
+              <ul>{chanList}</ul>
+            </div>
+            <div>
+              <ListTitle title="reddit" />
+              <ul>{redList}</ul>
+            </div>
+          </div>
+        );
+      }
+    });
+    var ListTitle = React.createClass({
+      render: function(){
+        return (
+          <h3>{this.props.title}</h3>
+        );
+      }
+    });
+    /*
+    var ListItem = React.createClass({
+      render: function(){
+        return (
+         <li><a href="{this.props.link}">{this.props.title}</a></li>
+        );
+      )
+    });*/
+    var Title = React.createClass({
+      render: function(){
+        return(
+         <h1>AVR</h1>
+        )
+      }
+    });
+    var Paper = React.createClass({
+      render: function(){
+        return (
+          <div className="paper">
+            <List />
+          </div>
+        );
+      }
+    });
+    ReactDOM.render(
+      <Paper />,
+      document.getElementById('content')
+    );
+    </script>
+  </body>
+</html>
