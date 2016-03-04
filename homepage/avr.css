@@ -40,3 +40,6 @@ h1{
   text-decoration: none;
   color: #eeeeee;
 }
+.paper a:hover{
+  color: rgba(238,238,238,.7);
+}
