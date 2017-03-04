@@ -13,7 +13,7 @@ startup_screen = "playlist"
 playlist_display_mode = "classic"
 message_delay_time = "1"
 ignore_leading_the = "yes"
-progressbar_look = "⋅•⋅"
+progressbar_look = "·•·"
 media_library_primary_tag = "album_artist"
 cyclic_scrolling = "yes"
 
