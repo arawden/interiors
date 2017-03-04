@@ -2,102 +2,112 @@
 # bspwm hotkeys
 #
 
+# Close WM
 super + shift + Escape
   bspc quit
 
+# Reload sxhkd
+  pkill -USR1 -x sxhkd
+
+# Reload config
 super + shift + r
   sh ~/.config/bspwm/bspwmrc
 
+# Close window
 alt + F4
-  bspc window -c
+  bspc node -c
 
-super + shift + {f,p,s}
-  bspc window -t {floating,pseudo_tiled,fullscreen}
-}
+# Change window mode
+super + shift + {f,p,t}
+  bspc node -t {floating,pseudo_tiled,tiled}
 
+# Focus on last window
 alt + Tab
-  bspc window -f last
+  bspc node -f last
 
 super + b
-  bspc desktop -B
+  bspc desktop -B # What is "bubble"
 
-
+# Focus last node/desktop
 super + {grave,Tab}
-  bspc {window,desktop} -f last
+  bspc {node,desktop} -f last
 
+# Swap last two focused windows
 super + apostrophe
-  bspc window -s last
+  bspc node -s last
 
-super + {o,i}
-  bspc control --record-history off; \
-  bspc window {older,newer} -f; \
-  bspc control --record-history on
+# super + y
+#   bspc node -w last.manual unknown command -w
 
-super + y
-  bspc window -w last.manual
+# super + m
+#   bspc node -s biggest
 
-super + m
-  bspc window -s biggest
-
+# Swap in specified direction
 super + shift + {h,j,k,l}
-  bspc window -s {left,down,up,right}
+  bspc node -s {west,south,north,east}
 
-super + {_,shift + }c
-  bspc window -f {next,prev}
+# super + {_,shift + }c
+#   bspc node -f {next,prev}
 
-super + {comma,period}
-  bspc desktop -C {backward,forward}
+# super + {comma,period}
+#  bspc desktop -C {backward,forward} unkwown command -C
 
 super + bracket{left,right}
   bspc desktop -f {prev,next}
 
-super + ctrl + {h,j,k,l}
-  bspc window -p {left,down,up,right}
+# super + ctrl + {h,j,k,l}
+#   bspc window -p {left,down,up,right} invalid descriptor
 
 super + ctrl + {_,shift + }space
-  bspc {window -p cancel,desktop -c}
+  bspc {node -p cancel,desktop -c}
 
+# Move the focused window
 super + alt + {h,j,k,l}
-  bspc window -e {left -10,down +10,up -10,right +10}
+  bspc node -v {dx -10,dy -10,dy +10,dx +10}
 
-super + alt + shift + {h,j,k,l}
-  bspc window -e {right -10,up +10,down -10,left +10}
-
+# Set split ratio
 super + ctrl + {1-9}
-  bspc window -r 0.{1-9}
+  bspc node -r 0.{1-9}
 
+# View/move to specified desktop
 super + {_,shift + }{1-9,0}
-  bspc {desktop -f,window -d} ^{1-9,10}
+  bspc {desktop -f,node -d} ^{1-9,10}
 
-~button1
-  bspc pointer -g focus
-
-super + button{1-3}
-  bspc pointer -g {move,resize_corner,resize_side}
-
-super + !button{1-3}
-  bspc pointer -t %i %i
-
-super + @button{1-3}
-  bspc pointer -u
 #
 # Non-WM keys
 #
-XF86Audio{Raise,Lower}Volume
-    amixer set Master {5%+,5%-} unmute
-XF86Audio{Play,Pause,Prev,Next}
-    mpc {play,pause,prev,next}
-XF86MonBrightness{Up,Down}
-    light -{A,U} 5
-Pause
-    mpc pause
-Print
-    scrot
+
+#XF86Audio{Raise,Lower}Volume
+#   amixer set Master {5%+,5%-} unmute
+#XF86Audio{Play,Pause,Prev,Next}
+#   mpc {play,pause,prev,next}
+# Pause
+#   mpc pause
+
+# Terminal
 super + t
-    urxvt
+  termite
+
+# Browser
 super + w
-    firefox
-super + l
-    slimlock
-super + r
-    urxvt -geometry 80x1 -name 'run' -e sh -c '/bin/bash -t -t'
+   google-chrome-stable
+
+# Lock
+super + ctrl + l
+  dm-tool lock
+
+# Run window
+super + space
+  dmenu_run
+
+# Scrot
+Print
+  scrot
+
+# Screen brightness
+XF86MonBrightness{Up,Down}
+  light -{A,U} 10
+
+# Music
+Pause
+  mpc pause

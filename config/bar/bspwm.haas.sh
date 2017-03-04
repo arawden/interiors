@@ -1,13 +1,12 @@
 #!/bin/bash
 
 # MPC doesn't know what to connect to (I think)
-export MPD_HOST="/home/nani/.mpd/socket"
+# export MPD_HOST="/home/nani/.mpd/socket"
 BLACK=#282a2e
 WHITE=#c0c1b3
 GREEN=#a3be8c
 BLUE=#648187
 BROWN=#2B303B
-BLACK=#2b303b
 {
 tab=" "
 clock="$tab%{T1}%{T-}$tab"
@@ -17,9 +16,9 @@ PL="%{T2}%{T-}"
 
 
 desktop(){
-  color=$BLUE
-  title="$(bspc query -D -d | cut -c1-3)"
-  index="$(bspc query -D -d | cut -c4)"
+  color=$BROWN
+  title="$(bspc query -D -d --names | cut -c1-3)"
+  index="$(bspc query -D -d --names | cut -c4)"
   if [ $index -eq 2 ]; then
     color=$BLACK
   fi
@@ -37,7 +36,8 @@ app(){
   # 's/\(.*\)-//' - strip everything before last slash
   # 's/\(.*\)–//' - Can you tell the difference? GIMP uses a real EM lol
   # 's/^[ \t]*\([[:alnum:]]*\)/\L\1/' - Remove white space and lowercase
-  title="$(bspc query -W -w | xtitle | sed 's/\(.*\)-//' | sed 's/\(.*\)–//' | sed 's/^[ \t]*\([[:alnum:]]*\)/\L\1/')"
+  # title="$(bspc query -W -w | xtitle | sed 's/\(.*\)-//' | sed 's/\(.*\)–//' | sed 's/^[ \t]*\([[:alnum:]]*\)/\L\1/')"
+  title=$(bspc query -W -w | xtitle)
   echo "%{F$WHITE}$tab$title %{B-}%{F$BLUE}$PR%{F-}"
 }
 
@@ -72,4 +72,4 @@ while :; do
   printf "%s\n" "$(desktop)$(app)%{r}$(music)%{A:exec pavucontrol:}$(volume)%{A}$(dat)"
   sleep 1
 done
-} 2> /dev/null | lemonbar -p -g 1880x16+18+8 -B $BLACK -F $WHITE  -f "Font Awesome:size=10:style=Bold"  -f "Anonymous Pro for Powerline:size=10:style=Bold" | sh ~/.config/bar/spawn.sh
+} 2> /dev/null | lemonbar -p -g 1880x16+18+8 -B $BLACK -F $WHITE  -f "Font Awesome"  -f "Anonymice Powerline Nerd Font-11" | sh ~/.config/bar/spawn.sh
