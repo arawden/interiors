@@ -1,4 +1,0 @@
-#!/bin/bash
-pplet    > /dev/null 2>/dev/null &
-stalonetray  > /dev/null 2>/dev/null
-killall nm-applet

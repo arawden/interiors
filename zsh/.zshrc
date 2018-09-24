@@ -1,0 +1,1 @@
+/usr/lib/prezto/runcoms/zshrc
