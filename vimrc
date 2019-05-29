@@ -1,1 +1,0 @@
-/home/avr/.vimrc

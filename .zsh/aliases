@@ -1,3 +1,5 @@
+alias vim="nvim"
+
 alias pacaur="pikaur"
 alias update="pikaur -Syu"
 
@@ -7,6 +9,13 @@ alias sound=pavucontrol
 alias wifi=wicd-gtk
 
 alias pyserver="python -m http.server 8000 &>/dev/null"
+alias sprunge="curl -F 'sprunge=<-' http://sprunge.us"
+
+alias rs="sh /home/avr/downloads/programs/rs.sh"
+
+# Git aliases
+alias gst="git status"
+alias gd="git diff"
 
 
 # Force xterm on ssh
