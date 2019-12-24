@@ -4,7 +4,7 @@ sxhkd
 termite
 pikaur
 ranger
-vim
+neovim
 tmux
 chrome
 feh

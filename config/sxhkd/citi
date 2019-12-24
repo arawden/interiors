@@ -10,13 +10,32 @@ super + t
 super + w
   google-chrome-stable
 
+# music
+super + s
+  spotify
+
 # Run dialog
 super + r
   dmenu_run
 
+# volume control
+XF86Audio{Raise,Lower}Volume
+  amixer set Master {5%+,5%-} unmute
+
+# playback control
+XF86Audio{Play,Pause}
+  playerctl {play,pause}
+
+XF86Audio{Prev,Next}
+  playerctl {previous,next}
+
 # Reload sxhkd config
 super + Escape
   pkill -USR1 -x sxhkd
+
+# Shutdown
+super + ctrl + shift + Escape
+  shutdown now
 
 #
 # bspwm hotkeys

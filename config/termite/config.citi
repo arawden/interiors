@@ -3,7 +3,7 @@ allow_bold = true
 audible_bell = false
 clickable_url = true
 dynamic_title = true
-font = Anonymous Pro 11
+font = Anonymous Pro 12
 #fullscreen = true
 #geometry = 640x480
 #icon_name = terminal
@@ -39,47 +39,75 @@ cursor_shape = block
 #scrollbar = off
 
 [colors]
-# special
-foreground      = #cccccc
-foreground_bold = #cccccc
-cursor          = #cccccc
-background      = #202020
+# Nord
+cursor = #d8dee9
+cursor_foreground = #2e3440
 
-## Tomorrow.Dark
-# black
-color0  = #1d1f21
-color8  = #969896
+foreground = #d8dee9
+foreground_bold = #d8dee9
+background = #202024
 
-# red
-color1  = #cc6666
-color9  = #cc6666
+highlight = #4c566a
 
-# green
-color2  = #b5bd68
-color10 = #b5bd68
+color0  = #3b4252
+color1  = #bf616a
+color2  = #a3be8c
+color3  = #ebcb8b
+color4  = #81a1c1
+color5  = #b48ead
+color6  = #88c0d0
+color7  = #e5e9f0
+color8  = #4c566a
+color9  = #bf616a
+color10 = #a3be8c
+color11 = #ebcb8b
+color12 = #81a1c1
+color13 = #b48ead
+color14 = #8fbcbb
+color15 = #eceff4
 
-# yellow
-color3  = #f0c674
-color11 = #f0c674
-
-# blue
-color4  = #81a2be
-color12 = #81a2be
-
-# magenta
-color5  = #b294bb
-color13 = #b294bb
-
-# cyan
-color6  = #8abeb7
-color14 = #8abeb7
-
-# white
-color7  = #c5c8c6
-color15 = #ffffff
+# Tomorrow night?
+## special
+#foreground      = #cccccc
+#foreground_bold = #cccccc
+#cursor          = #cccccc
+#background      = #202020
+#
+### Tomorrow.Dark
+## black
+#color0  = #1d1f21
+#color8  = #969896
+#
+## red
+#color1  = #cc6666
+#color9  = #cc6666
+#
+## green
+#color2  = #b5bd68
+#color10 = #b5bd68
+#
+## yellow
+#color3  = #f0c674
+#color11 = #f0c674
+#
+## blue
+#color4  = #81a2be
+#color12 = #81a2be
+#
+## magenta
+#color5  = #b294bb
+#color13 = #b294bb
+#
+## cyan
+#color6  = #8abeb7
+#color14 = #8abeb7
+#
+## white
+#color7  = #c5c8c6
+#color15 = #ffffff
 
 ## Ocean.Dark
-# black
+## black
 #color0  = #2b303b
 #color8  = #65737e
 #
