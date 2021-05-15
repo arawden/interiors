@@ -1,1 +1,1 @@
-/home/avery/.zprezto/runcoms/zprofile
+.zprezto/runcoms/zprofile

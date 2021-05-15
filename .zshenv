@@ -1,1 +1,1 @@
-/home/avery/.zprezto/runcoms/zshenv
+.zprezto/runcoms/zshenv
