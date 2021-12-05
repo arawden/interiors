@@ -1,0 +1,10 @@
+[Unit]
+Description=Periodically backs up the media server
+Requires=mediaBackup.service
+
+[Timer]
+Unit=backupMedia.service
+OnCalendar=weekly
+
+[Install]
+WantedBy=timers.target
