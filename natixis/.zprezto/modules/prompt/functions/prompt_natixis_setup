@@ -16,11 +16,11 @@ function +vi-git_status {
   fi
 }
 
-function prompt_minimal_precmd {
+function prompt_natixis_precmd {
   vcs_info
 }
 
-function prompt_minimal_setup {
+function prompt_natixis_setup {
   setopt LOCAL_OPTIONS
   unsetopt XTRACE KSH_ARRAYS
   prompt_opts=(cr percent sp subst)
@@ -30,7 +30,7 @@ function prompt_minimal_setup {
   autoload -Uz vcs_info
 
   # Add hook for calling vcs_info before each command.
-  add-zsh-hook precmd prompt_minimal_precmd
+  add-zsh-hook precmd prompt_natixis_precmd
 
   # Tell prezto we can manage this prompt
   zstyle ':prezto:module:prompt' managed 'yes'
@@ -50,14 +50,14 @@ function prompt_minimal_setup {
   RPROMPT='${vcs_info_msg_0_}'
 }
 
-function prompt_minimal_preview {
+function prompt_natixis_preview {
   local +h PROMPT=''
   local +h RPROMPT=''
   local +h SPROMPT=''
 
   editor-info 2> /dev/null
-  prompt_preview_theme 'minimal'
+  prompt_preview_theme 'natixis'
 }
 
-prompt_minimal_setup "$@"
+prompt_natixis_setup "$@"
 # vim: ft=zsh
