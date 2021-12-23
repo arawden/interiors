@@ -1,0 +1,20 @@
+directory: /home/avery/share/music/bleep
+
+paths:
+  default: $albumartist - $album ($year) [$catalognum]
+  comp: Various artists/$album ($year) [$catalognum]
+
+import:
+  move: yes
+  timid: yes
+
+plugins:
+  convert discogs embedart scrub
+
+convert:
+  auto: yes
+  delete_originals: yes
+
+embedart:
+  remove_art_file: yes
+
