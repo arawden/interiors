@@ -1,2 +1,6 @@
-# oeconomia
-_from Ancient Greek οἰκονομία (oikonomía, “management of a household, administration”)_
+# interiors
+or, what's in your `/home`
+
+natixis: private laptop
+renaissance: private development server
+socgen: corporate macbook
